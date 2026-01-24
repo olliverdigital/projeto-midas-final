@@ -21,28 +21,29 @@ export function Header() {
   const isActive = (path: string) => location.pathname === path
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200/20 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-20 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2" aria-label="MIDAS Home">
-          <div className="flex items-center justify-center w-10 h-10 rounded bg-brand-blue text-white">
-            <Zap className="h-6 w-6 fill-current" />
+        <Link to="/" className="flex items-center gap-3 group" aria-label="MIDAS Home">
+          <div className="relative flex items-center justify-center w-10 h-10 bg-slate-900 border border-slate-700 text-secondary group-hover:border-secondary transition-colors">
+            <div className="absolute inset-0 bg-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <Zap className="h-6 w-6 fill-current z-10" />
           </div>
           <div className="flex flex-col leading-none">
-            <span className="text-xl font-bold tracking-tight text-brand-blue">MIDAS</span>
-            <span className="text-[0.65rem] font-medium text-muted-foreground tracking-wider uppercase">Locações & Serviços</span>
+            <span className="text-xl font-heading font-black tracking-tighter text-slate-900 group-hover:text-secondary transition-colors">MIDAS</span>
+            <span className="text-[0.6rem] font-mono font-bold text-slate-500 tracking-widest uppercase">Locações & Serviços</span>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-1">
           {navigation.map((item) => (
             <Link
               key={item.name}
               to={item.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-brand-blue",
-                isActive(item.href) ? "text-brand-blue font-semibold" : "text-muted-foreground",
-                item.special && "text-red-600 font-bold hover:text-red-700"
+                "px-4 py-2 text-sm font-medium transition-all border-b-2 border-transparent hover:text-secondary hover:bg-secondary/5",
+                isActive(item.href) ? "text-secondary border-secondary font-bold" : "text-slate-600",
+                item.special && "ml-2 bg-red-50 text-red-600 border-red-200 hover:bg-red-100 hover:border-red-500 hover:text-red-700"
               )}
             >
               {item.name}
@@ -51,7 +52,7 @@ export function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <Button asChild variant="default" className="bg-brand-blue hover:bg-brand-blue/90">
+          <Button asChild variant="default" className="bg-secondary hover:bg-secondary/90 text-white font-bold rounded-none h-10 px-6">
             <a href="https://wa.me/5585988154220" target="_blank" rel="noreferrer">
               <PhoneCall className="mr-2 h-4 w-4" />
               Falar com Especialista
@@ -62,39 +63,42 @@ export function Header() {
         {/* Mobile Navigation */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" aria-label="Menu">
+            <Button variant="ghost" size="icon" aria-label="Menu" className="rounded-none hover:bg-secondary/10 hover:text-secondary">
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+          <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l-secondary bg-background/95 backdrop-blur-xl">
             <div className="flex flex-col gap-6 mt-6">
-              <Link to="/" className="flex items-center gap-2 mb-4" onClick={() => setIsOpen(false)}>
-                <div className="flex items-center justify-center w-8 h-8 rounded bg-brand-blue text-white">
+              <Link to="/" className="flex items-center gap-2 mb-8 border-b border-slate-200 pb-4" onClick={() => setIsOpen(false)}>
+                <div className="flex items-center justify-center w-10 h-10 bg-slate-900 text-secondary">
                   <Zap className="h-5 w-5 fill-current" />
                 </div>
-                <span className="text-lg font-bold text-brand-blue">MIDAS</span>
+                <div className="flex flex-col">
+                  <span className="text-lg font-black text-slate-900">MIDAS</span>
+                  <span className="text-[0.6rem] font-mono text-slate-500 uppercase">SYSTEM MENU</span>
+                </div>
               </Link>
-              <nav className="flex flex-col gap-4">
+              <nav className="flex flex-col gap-2">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      "text-lg font-medium transition-colors hover:text-brand-blue",
-                      isActive(item.href) ? "text-brand-blue font-semibold" : "text-muted-foreground",
-                      item.special && "text-red-600 font-bold"
+                      "text-lg font-medium p-3 transition-colors border-l-2 border-transparent hover:bg-slate-50 hover:border-secondary hover:text-secondary bg-gradient-to-r hover:from-slate-50 hover:to-transparent",
+                      isActive(item.href) ? "text-secondary border-secondary bg-slate-50 font-bold" : "text-slate-600",
+                      item.special && "text-red-600 font-bold border-red-200 hover:border-red-500"
                     )}
                   >
                     {item.name}
                   </Link>
                 ))}
               </nav>
-              <div className="mt-4">
-                <Button asChild className="w-full bg-brand-blue" size="lg">
+              <div className="mt-8 border-t border-slate-200 pt-6">
+                <Button asChild className="w-full bg-secondary text-white font-bold rounded-none h-12" size="lg">
                   <a href="https://wa.me/5585988154220" target="_blank" rel="noreferrer">
                     <PhoneCall className="mr-2 h-4 w-4" />
-                    Falar via WhatsApp
+                    WhatsApp
                   </a>
                 </Button>
               </div>
