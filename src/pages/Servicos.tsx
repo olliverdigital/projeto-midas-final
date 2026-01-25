@@ -1,11 +1,17 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { ServiceCard } from '@/components/ServiceCard'
+import { SEO } from '@/components/SEO'
 import { servicesData } from '@/data/services'
 
 export default function Servicos() {
   return (
     <div className="flex flex-col min-h-screen pb-20">
+      <SEO
+        title="Nossos Serviços | Manutenção Industrial e Elétrica"
+        description="Portfólio completo: Manutenção Preditiva, Usinas Solares, Subestações, Laudos Técnicos e mais. Soluções integradas para sua indústria."
+        canonical="/servicos"
+      />
       <section className="bg-slate-900 text-white py-20">
         <div className="container text-center max-w-4xl">
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">Nossas Soluções</h1>
@@ -18,9 +24,9 @@ export default function Servicos() {
       <section className="py-20 container">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesData.map((service) => (
-            <ServiceCard 
+            <ServiceCard
               key={service.id}
-              title={service.title} 
+              title={service.title}
               description={service.shortDesc}
               icon={<service.icon className="h-6 w-6" />}
               href={service.id === 'emergencia' ? '/emergencia' : `/servicos/${service.id}`}

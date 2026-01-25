@@ -1,11 +1,17 @@
 import { ShieldCheck, Users, Target, CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
+import { SEO } from '@/components/SEO'
 import solarMaintenance from '@/assets/solar-maintenance.jpg'
 
 export default function Sobre() {
   return (
     <div className="flex flex-col min-h-screen pb-20">
+      <SEO
+        title="Sobre Nós | MIDAS - Excelência em Engenharia"
+        description="Conheça a história da MIDAS, nossa equipe certificada e nosso compromisso com segurança e eficiência em serviços industriais e de energia."
+        canonical="/sobre"
+      />
       <section className="bg-slate-900 text-white py-20">
         <div className="container text-center max-w-4xl">
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">Nossa História & Propósito</h1>

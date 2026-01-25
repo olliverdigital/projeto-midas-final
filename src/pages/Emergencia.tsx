@@ -1,9 +1,15 @@
 import { ShieldAlert, PhoneCall, Clock, CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { SEO } from '@/components/SEO'
 
 export default function Emergencia() {
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Plantão 24/7 | Atendimento de Emergência Elétrica"
+        description="Resposta rápida para falhas críticas. Equipe volante disponível 24 horas para subestações, geradores e paradas de linha."
+        canonical="/emergencia"
+      />
       <section className="bg-red-600 text-white py-24 text-center">
         <div className="container max-w-3xl">
           <div className="inline-flex items-center justify-center bg-white/20 p-3 rounded-full mb-6 animate-pulse">
@@ -41,7 +47,7 @@ export default function Emergencia() {
               ))}
             </ul>
           </div>
-          
+
           <div className="bg-slate-50 p-8 rounded-xl border">
             <h3 className="text-2xl font-bold mb-6">Nosso Compromisso</h3>
             <div className="space-y-6">
@@ -60,7 +66,7 @@ export default function Emergencia() {
                 </div>
               </div>
               <div className="flex gap-4">
-                 <ShieldAlert className="h-8 w-8 text-brand-blue shrink-0" />
+                <ShieldAlert className="h-8 w-8 text-brand-blue shrink-0" />
                 <div>
                   <h4 className="font-bold text-lg">Segurança Total</h4>
                   <p className="text-muted-foreground">Mesmo na emergência, seguimos rigorosamente os protocolos da NR10.</p>

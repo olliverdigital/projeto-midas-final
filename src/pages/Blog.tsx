@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Calendar, User, ArrowRight, Tag } from 'lucide-react'
+import { SEO } from '@/components/SEO'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import industrialMaintenance from '@/assets/industrial-maintenance.jpg'
@@ -13,7 +14,7 @@ const posts = [
     excerpt: "Entenda por que esperar o equipamento quebrar pode custar até 7x mais do que investir em planos de manutenção programada.",
     category: "Gestão de Manutenção",
     date: "12 Mar 2024",
-    author: "Eng. Ricardo Silva",
+    author: "Téc. Luiz Lima",
     image: industrialMaintenance
   },
   {
@@ -22,7 +23,7 @@ const posts = [
     excerpt: "Saiba como a inspeção termográfica identifica pontos quentes invisíveis a olho nu e evita paradas críticas na sua planta.",
     category: "Manutenção Preditiva",
     date: "05 Mar 2024",
-    author: "Téc. João Souza",
+    author: "Téc. Luiz Lima",
     image: heroBg
   },
   {
@@ -31,7 +32,7 @@ const posts = [
     excerpt: "Estudos mostram o impacto da falta de limpeza técnica em usinas fotovoltaicas e como recuperar essa performance.",
     category: "Energia Solar",
     date: "28 Fev 2024",
-    author: "Eng. Ana Costa",
+    author: "Téc. Luiz Lima",
     image: solarMaintenance
   }
 ]
@@ -39,6 +40,11 @@ const posts = [
 export default function Blog() {
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Blog Técnico MIDAS | Artigos e Notícias"
+        description="Conteúdo educativo sobre engenharia de manutenção, eficiência energética, normas regulamentadoras (NR10) e tendências do setor."
+        canonical="/blog"
+      />
       <section className="bg-slate-900 text-white py-20">
         <div className="container text-center max-w-4xl">
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">Blog Técnico</h1>

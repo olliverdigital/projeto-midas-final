@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from 'react-router-dom'
 import { CheckCircle2, ArrowLeft, PhoneCall } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 // import { ContactForm } from '@/components/ContactForm'
+import { SEO } from '@/components/SEO'
 import { servicesData } from '@/data/services'
 
 export default function ServiceDetail() {
@@ -16,6 +17,11 @@ export default function ServiceDetail() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title={`${service.title} | MIDAS Serviços`}
+        description={service.description}
+        canonical={`/servicos/${id}`}
+      />
       <section className="bg-slate-900 text-white py-20">
         <div className="container">
           <Link to="/servicos" className="inline-flex items-center text-slate-400 hover:text-white mb-6 transition-colors">
@@ -88,13 +94,13 @@ export default function ServiceDetail() {
                 </div>
               </div>
               <div className="mt-6">
-                 {/* Simplified form for sidebar if needed, or link to contact. Using full form for now but could be compact */}
-                 <div className="text-center">
-                    <p className="mb-4 font-medium">Prefere e-mail?</p>
-                    <Button asChild variant="outline" className="w-full">
-                        <Link to="/contato">Ir para Formulário Completo</Link>
-                    </Button>
-                 </div>
+                {/* Simplified form for sidebar if needed, or link to contact. Using full form for now but could be compact */}
+                <div className="text-center">
+                  <p className="mb-4 font-medium">Prefere e-mail?</p>
+                  <Button asChild variant="outline" className="w-full">
+                    <Link to="/contato">Ir para Formulário Completo</Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

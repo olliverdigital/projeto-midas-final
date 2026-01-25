@@ -1,5 +1,6 @@
 import { ArrowRight, ShieldAlert, Zap, Factory, Sun, Activity, ClipboardCheck, PhoneCall, ChevronRight, Gauge } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { SEO } from '@/components/SEO'
 import { Button } from '@/components/ui/button'
 import { ServiceCard } from '@/components/ServiceCard'
 import { ContactForm } from '@/components/ContactForm'
@@ -9,6 +10,11 @@ import industrialMaintenance from '@/assets/industrial-maintenance.jpg'
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
+      <SEO
+        title="MIDAS - Engenharia de Manutenção Industrial e Energia Solar"
+        description="Especialistas em manutenção industrial, energia solar e infraestrutura elétrica. Atendimento 24/7, laudos NR10/SPDA e gestão de ativos."
+        canonical="/"
+      />
 
       {/* HERO SECTION: Massive Typographic Overlay */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-slate-950 border-b-4 border-secondary">

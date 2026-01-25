@@ -1,9 +1,15 @@
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import { ContactForm } from '@/components/ContactForm'
+import { SEO } from '@/components/SEO'
 
 export default function Contato() {
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Contato | Solicite um Orçamento - MIDAS"
+        description="Fale com nossos engenheiros. Solicite visita técnica ou orçamento para manutenção industrial e projetos elétricos."
+        canonical="/contato"
+      />
       <section className="bg-slate-900 text-white py-20">
         <div className="container text-center max-w-4xl">
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">Fale Conosco</h1>
@@ -72,7 +78,7 @@ export default function Contato() {
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-slate-50 p-6 rounded-xl border">
               <h3 className="font-bold text-lg mb-2">Trabalhe Conosco</h3>
               <p className="text-sm text-muted-foreground mb-4">
