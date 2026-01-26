@@ -14,29 +14,48 @@ interface ServiceCardProps {
 export function ServiceCard({ title, description, icon, href, features, className }: ServiceCardProps) {
   return (
     <div className={cn(
-      "group relative flex flex-col h-full bg-slate-900/50 border border-slate-800 hover:border-secondary/50 transition-all duration-300 p-6 overflow-hidden",
+      // Industrial Tech Card: Sharp edges, solid background, high contrast
+      "group relative flex flex-col h-full",
+      "bg-slate-900 border-2 border-slate-800",
+      "hover:border-secondary hover:shadow-[0_0_20px_rgba(249,115,22,0.15)]",
+      "hover:translate-x-2", // Lateral slide animation on hover
+      "transition-all duration-300 p-6 overflow-hidden",
+      "rounded-none", // Sharp edges for industrial/technical feel
       className
     )}>
-      {/* Hover Glow Effect */}
+
+      {/* Subtle orange glow on hover */}
       <div className="absolute inset-0 bg-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-      {/* Tech Corner Markers */}
-      <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-slate-700 group-hover:border-secondary transition-colors"></div>
-      <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-slate-700 group-hover:border-secondary transition-colors"></div>
+      {/* Technical corner markers - more prominent */}
+      <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-slate-700 group-hover:border-secondary transition-colors duration-300"></div>
+      <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-slate-700 group-hover:border-secondary transition-colors duration-300"></div>
+
+      {/* Top accent line */}
+      <div className="absolute top-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-500"></div>
 
       <div className="relative z-10 flex-1">
-        <div className="w-12 h-12 rounded-none bg-slate-800 text-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+        {/* Icon container - sharp, technical */}
+        <div className="w-14 h-14 rounded-none bg-slate-800/80 border border-slate-700 text-secondary flex items-center justify-center mb-6 group-hover:scale-105 group-hover:border-secondary group-hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] transition-all duration-300">
           {icon}
         </div>
 
-        <h3 className="text-xl font-heading font-bold text-white mb-3 group-hover:text-secondary transition-colors">{title}</h3>
-        <p className="text-slate-400 text-sm leading-relaxed mb-6">{description}</p>
+        {/* Title - maximum contrast, no hover color change */}
+        <h3 className="text-xl font-heading font-black text-white mb-3 leading-tight">
+          {title}
+        </h3>
 
+        {/* Description - high contrast for readability */}
+        <p className="text-slate-300 text-sm leading-relaxed mb-6">
+          {description}
+        </p>
+
+        {/* Features list - technical style, no hover on text */}
         {features && (
-          <ul className="space-y-3 border-t border-slate-800 pt-4 mb-6">
+          <ul className="space-y-2.5 border-t border-slate-800 pt-4 mb-6">
             {features.map((feature, idx) => (
-              <li key={idx} className="flex items-start gap-3 text-xs font-mono text-slate-500 uppercase tracking-wide">
-                <span className="w-1.5 h-1.5 bg-slate-700 group-hover:bg-secondary mt-1 transition-colors"></span>
+              <li key={idx} className="flex items-start gap-3 text-xs font-mono text-slate-400 uppercase tracking-wider">
+                <span className="w-1.5 h-1.5 bg-slate-700 group-hover:bg-secondary mt-1.5 transition-colors duration-300 flex-shrink-0"></span>
                 <span>{feature}</span>
               </li>
             ))}
@@ -44,13 +63,17 @@ export function ServiceCard({ title, description, icon, href, features, classNam
         )}
       </div>
 
-      <div className="relative z-10 mt-auto">
+      {/* CTA Link - technical precision, only element with text hover */}
+      <div className="relative z-10 mt-auto pt-4 border-t border-slate-800/50">
         <Link
           to={href}
-          className="inline-flex items-center text-sm font-bold text-white group-hover:text-secondary transition-colors"
+          className="inline-flex items-center text-xs font-mono font-bold text-slate-400 uppercase tracking-widest group-hover:text-secondary transition-colors duration-300"
         >
-          DETALHES TÉCNICOS
-          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          <span className="relative">
+            DETALHES TÉCNICOS
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+          </span>
+          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 duration-300" />
         </Link>
       </div>
     </div>

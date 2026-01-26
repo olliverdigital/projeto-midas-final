@@ -171,7 +171,14 @@ export default function Home() {
                   status: "PENDING"
                 }
               ].map((item, idx) => (
-                <div key={idx} className="group bg-white p-6 border-l-4 border-slate-200 hover:border-secondary transition-all hover:shadow-lg hover:translate-x-2">
+                <div
+                  key={idx}
+                  // MUDANÇAS AQUI:
+                  // 1. 'top-32' (ou top-40): Faz o card travar mais para baixo, não cobrindo o texto imediatamente.
+                  // 2. 'z-10': Garante que o card fique na camada correta.
+                  // 3. 'mb-24' (opcional no último): Dá espaço extra para rolar o fim.
+                  className="sticky top-80 lg:static z-10 group bg-white p-6 border-l-4 border-slate-200 hover:border-secondary transition-all hover:shadow-lg hover:translate-x-2"
+                >
                   <div className="flex justify-between items-start mb-2">
                     <span className="font-mono text-xs font-bold text-slate-300 group-hover:text-secondary transition-colors">
                       {item.id}
