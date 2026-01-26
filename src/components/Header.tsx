@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, PhoneCall, Zap } from 'lucide-react'
+import { Menu, PhoneCall } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
+import logoImg from '@/assets/logo.png'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -24,9 +25,8 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-slate-200/20 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group" aria-label="MIDAS Home">
-          <div className="relative flex items-center justify-center w-10 h-10 bg-slate-900 border border-slate-700 text-secondary group-hover:border-secondary transition-colors">
-            <div className="absolute inset-0 bg-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <Zap className="h-6 w-6 fill-current z-10" />
+          <div className="relative flex items-center justify-center w-12 h-12 overflow-hidden group-hover:scale-105 transition-transform">
+            <img src={logoImg} alt="MIDAS Logo" className="w-full h-full object-contain" />
           </div>
           <div className="flex flex-col leading-none">
             <span className="text-xl font-heading font-black tracking-tighter text-slate-900 group-hover:text-secondary transition-colors">MIDAS</span>
@@ -70,8 +70,8 @@ export function Header() {
           <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l-secondary bg-background/95 backdrop-blur-xl">
             <div className="flex flex-col gap-6 mt-6">
               <Link to="/" className="flex items-center gap-2 mb-8 border-b border-slate-200 pb-4" onClick={() => setIsOpen(false)}>
-                <div className="flex items-center justify-center w-10 h-10 bg-slate-900 text-secondary">
-                  <Zap className="h-5 w-5 fill-current" />
+                <div className="flex items-center justify-center w-12 h-12 overflow-hidden">
+                  <img src={logoImg} alt="MIDAS Logo" className="w-full h-full object-contain" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-lg font-black text-slate-900">MIDAS</span>

@@ -18,28 +18,61 @@ export default function Home() {
 
       {/* HERO SECTION: Massive Typographic Overlay */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-slate-950 border-b-4 border-secondary">
-        {/* Background Image with Technical Overlay */}
-        <div className="absolute inset-0 z-0 select-none">
+
+        {/* Background Image with Professional Technical Overlay */}
+        <div className="absolute inset-0 z-0 select-none overflow-hidden">
+
+          {/* Background Image */}
           <img
             src={heroBg}
             alt="Industrial Technical Background"
-            className="w-full h-full object-cover opacity-20 grayscale scale-105"
+            className="
+              w-full h-full object-cover
+              opacity-40
+              grayscale-[60%]
+              contrast-110
+              brightness-90
+              scale-105
+            "
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/60"></div>
-          {/* Tech Grid Overlay */}
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 hover:opacity-30 transition-opacity duration-1000"></div>
-          <div className="absolute top-0 right-0 p-8 opacity-20 hidden lg:block">
-            <div className="border border-white/20 p-4 font-mono text-xs text-secondary tracking-[0.2em] w-64">
+
+          {/* Smart Gradient Overlay (focus on text area) */}
+          <div
+            className="
+              absolute inset-0
+              bg-gradient-to-r
+              from-slate-950/90
+              via-slate-950/65
+              to-transparent
+            "
+          ></div>
+
+          {/* Subtle Noise / Tech Texture */}
+          <div
+            className="
+              absolute inset-0
+              bg-[url('https://grainy-gradients.vercel.app/noise.svg')]
+              opacity-10
+              hover:opacity-20
+              transition-opacity
+              duration-1000
+            "
+          ></div>
+
+          {/* Technical Status Panel */}
+          <div className="absolute top-0 right-0 p-8 hidden lg:block z-20 pointer-events-none">
+            <div className="border border-white/20 bg-slate-950/50 backdrop-blur-sm p-4 font-mono text-xs text-secondary tracking-[0.2em] w-64 shadow-lg">
               <p>STATUS: ONLINE</p>
               <p>SYSTEM: NOMINAL</p>
               <p>COORD: 03.7319° S, 38.5267° W</p>
             </div>
           </div>
+
         </div>
 
-        <div className="container relative z-10 pt-20">
+        <div className="container relative z-10 pt-20 px-4 sm:px-6">
           <div className="grid lg:grid-cols-12 gap-8 items-center">
-            {/* Left Content: Massive Typography */}
+            {/* Left Content */}
             <div className="lg:col-span-7 space-y-8 animate-in slide-in-from-left duration-700 fade-in">
               <div className="inline-flex items-center border border-secondary/30 bg-secondary/10 px-4 py-1.5 text-sm font-mono font-bold text-secondary tracking-widest uppercase">
                 <span className="h-2 w-2 bg-secondary mr-3 animate-pulse shadow-[0_0_10px_#f97316]"></span>
@@ -72,7 +105,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Content: Floating Tech Panel */}
+            {/* Right Content */}
             <div className="lg:col-span-5 relative mt-12 lg:mt-0">
               <div className="absolute -inset-1 bg-gradient-to-b from-secondary to-transparent opacity-20 blur-lg rounded-none"></div>
               <div className="relative bg-slate-900/90 backdrop-blur-md border border-slate-700 p-8 shadow-2xl animate-in fade-in zoom-in duration-700 delay-300">
@@ -84,7 +117,7 @@ export default function Home() {
                   Solicitação Rápida
                 </h3>
                 <p className="text-slate-400 text-sm mb-6 font-mono">
-                    // RESPOSTA TÉCNICA EM ATÉ 2H
+                  // RESPOSTA TÉCNICA EM ATÉ 2H
                 </p>
                 <ContactForm />
               </div>
@@ -95,7 +128,7 @@ export default function Home() {
 
       {/* DIAGNOSTIC LIST SECTION (Replacing "Dores") */}
       <section className="py-24 bg-slate-50 border-b border-slate-200">
-        <div className="container">
+        <div className="container px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="sticky top-24">
               <h2 className="text-xs font-mono font-bold text-secondary uppercase tracking-[0.2em] mb-4">
@@ -169,7 +202,7 @@ export default function Home() {
         {/* Background Grid Line */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20"></div>
 
-        <div className="container relative z-10">
+        <div className="container relative z-10 px-4 sm:px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 border-b border-slate-800 pb-8">
             <div className="max-w-2xl">
               <h2 className="text-xs font-mono font-bold text-secondary uppercase tracking-[0.2em] mb-3">Capacidade Técnica</h2>
@@ -238,7 +271,7 @@ export default function Home() {
 
       {/* TRUST/ABOUT SECTION: Dark Tech */}
       <section className="py-24 bg-white overflow-hidden relative border-t border-slate-200">
-        <div className="container relative z-10">
+        <div className="container relative z-10 px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="inline-block px-3 py-1 mb-6 border border-slate-200 bg-slate-50 text-slate-600 text-xs font-mono font-bold tracking-widest uppercase rounded-full">
@@ -284,7 +317,7 @@ export default function Home() {
 
       {/* CTA SECTION: Minimal Dark */}
       <section id="contato" className="py-24 bg-slate-950 border-t border-slate-900">
-        <div className="container">
+        <div className="container px-4 sm:px-6">
           <div className="max-w-4xl mx-auto bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 p-12 lg:p-16 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 blur-[100px] rounded-full group-hover:bg-secondary/20 transition-all"></div>
 
@@ -299,7 +332,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 text-white font-bold h-14 px-10 rounded-none text-lg">
                   <a href="https://wa.me/5585988154220" target="_blank" rel="noreferrer">
-                    <PhoneCall className="mr-2 h-5 w-5" /> FALAR COM ENGENHEIRO
+                    <PhoneCall className="mr-2 h-5 w-5" /> ATENDIMENTO
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="border-slate-700 text-white hover:bg-white hover:text-slate-950 font-medium h-14 px-10 rounded-none bg-transparent">
