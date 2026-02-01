@@ -89,6 +89,43 @@ VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 
 ---
 
+## 🔄 Roteamento (History-Based Routing)
+
+Este projeto utiliza **roteamento baseado em histórico** (history-based routing) ao invés de hash routing (URLs com `#`).
+
+### Por que History-Based Routing?
+
+- **✅ SEO Otimizado**: URLs limpas como `/servicos` são indexadas corretamente pelos mecanismos de busca
+- **✅ URLs Profissionais**: Links sem `#` são mais amigáveis e profissionais
+- **✅ Melhor Compartilhamento**: Links diretos funcionam corretamente quando compartilhados
+- **✅ Experiência do Usuário**: Navegação mais natural e compatível com SPAs modernas
+
+### Como Funciona
+
+**Desenvolvimento**: O servidor de desenvolvimento do Vite já suporta history-based routing automaticamente.
+
+**Produção**: É necessário configurar o servidor para redirecionar todas as requisições para `index.html`. Veja instruções detalhadas em [DEPLOYMENT.md](./DEPLOYMENT.md) para:
+- Netlify (arquivo `_redirects`)
+- Vercel (arquivo `vercel.json`)
+- Hostinger (arquivo `.htaccess`)
+
+### Estrutura de Rotas (Aplicação Principal)
+
+```
+/ ..................... Página inicial
+/sobre ................ Sobre a empresa
+/servicos ............. Lista de serviços
+/servicos/:id ......... Detalhes de um serviço específico
+/emergencia ........... Atendimento emergencial
+/contato .............. Formulário de contato
+/blog ................. Blog/Artigos
+* ..................... Página 404 (rotas não encontradas)
+```
+
+> **Nota**: O diretório `template-app/` contém um template minimalista com roteamento básico (apenas `/` e `NotFound`) que também foi atualizado para usar history-based routing.
+
+---
+
 ## 📂 Estrutura do Projeto
 
 ```

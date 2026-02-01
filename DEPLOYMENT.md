@@ -265,6 +265,113 @@ Configure redirects:
 
 ---
 
+## 🌐 Deploy na Hostinger
+
+### Pré-requisitos
+
+Este projeto usa **history-based routing** (roteamento baseado em histórico) ao invés de hash routing (URLs com `#`). Isso melhora:
+- **SEO**: URLs limpas são indexadas corretamente pelos buscadores
+- **Experiência do usuário**: URLs mais profissionais e amigáveis
+- **Compartilhamento**: Links diretos funcionam corretamente
+
+### Passos para Deploy
+
+1. **Build do projeto localmente**:
+   ```bash
+   pnpm build
+   ```
+   Isso cria a pasta `dist/` com os arquivos otimizados.
+
+2. **Upload via FTP/SFTP**:
+   - Acesse o painel Hostinger
+   - Vá em "Arquivos" → "Gerenciador de Arquivos" ou use um cliente FTP
+   - Navegue até a pasta `public_html` (ou pasta do seu domínio)
+   - Faça upload de **todo o conteúdo** da pasta `dist/`
+   - **Importante**: Faça upload dos arquivos *dentro* de dist/, não a pasta dist/ em si
+
+3. **Configure o .htaccess para History-Based Routing**:
+   
+   Crie ou edite o arquivo `.htaccess` na raiz do seu domínio (`public_html/`) com o seguinte conteúdo:
+
+   ```apache
+   <IfModule mod_rewrite.c>
+     # Habilita o módulo de rewrite
+     RewriteEngine On
+     
+     # Se o arquivo ou diretório solicitado não existir
+     RewriteCond %{REQUEST_FILENAME} !-f
+     RewriteCond %{REQUEST_FILENAME} !-d
+     
+     # Redireciona todas as requisições para index.html
+     RewriteRule ^(.*)$ /index.html [L,QSA]
+   </IfModule>
+
+   # Habilitar compressão Gzip
+   <IfModule mod_deflate.c>
+     AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+   </IfModule>
+
+   # Cache de arquivos estáticos
+   <IfModule mod_expires.c>
+     ExpiresActive On
+     ExpiresByType image/jpg "access plus 1 year"
+     ExpiresByType image/jpeg "access plus 1 year"
+     ExpiresByType image/gif "access plus 1 year"
+     ExpiresByType image/png "access plus 1 year"
+     ExpiresByType image/svg+xml "access plus 1 year"
+     ExpiresByType text/css "access plus 1 month"
+     ExpiresByType application/javascript "access plus 1 month"
+     ExpiresByType application/font-woff "access plus 1 year"
+     ExpiresByType application/font-woff2 "access plus 1 year"
+   </IfModule>
+   ```
+
+4. **Configurar HTTPS**:
+   - No painel Hostinger, vá em "Avançado" → "SSL"
+   - Habilite o certificado SSL gratuito (Let's Encrypt)
+   - Force o redirecionamento HTTPS (recomendado)
+
+5. **Verificar Compressão e Cache**:
+   - O `.htaccess` acima já configura compressão Gzip e cache
+   - Para Brotli (mais eficiente), verifique se está habilitado no painel
+   - Teste com [GTmetrix](https://gtmetrix.com/) ou [PageSpeed Insights](https://pagespeed.web.dev/)
+
+### Teste Pós-Deploy
+
+Após o deploy, teste as seguintes URLs diretamente no navegador:
+- `https://seudominio.com/`
+- `https://seudominio.com/servicos` (sem `#`)
+- `https://seudominio.com/sobre`
+- `https://seudominio.com/contato`
+
+Se alguma rota retornar 404, verifique se o `.htaccess` está configurado corretamente.
+
+### Atualizações Futuras
+
+Para atualizar o site:
+1. Faça as alterações no código
+2. Execute `pnpm build`
+3. Faça upload dos novos arquivos da pasta `dist/` substituindo os antigos
+4. Limpe o cache do navegador ou use modo anônimo para testar
+
+### Troubleshooting
+
+**Rotas retornam 404:**
+- Verifique se o `.htaccess` está na pasta correta (`public_html/`)
+- Confirme que o módulo `mod_rewrite` está habilitado (geralmente está por padrão na Hostinger)
+- Verifique se não há outros arquivos `.htaccess` conflitantes em subpastas
+
+**Site não carrega CSS/JS:**
+- Verifique se todos os arquivos da pasta `dist/assets/` foram enviados
+- Confirme que as permissões dos arquivos estão corretas (644 para arquivos, 755 para pastas)
+
+**Certificado SSL não funciona:**
+- Aguarde até 24h para propagação do certificado
+- Force o redirecionamento HTTPS no painel Hostinger
+- Limpe o cache do navegador
+
+---
+
 ## 📞 Suporte
 
 Se encontrar problemas durante o deployment, consulte:

@@ -1,16 +1,17 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Router, Route, Switch } from "wouter";
-import { useHashLocation } from "wouter/use-hash-location";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/NotFound";
 
-// Use hash-based routing (/#/) to support opening index.html directly via file:// protocol
+// Use history-based routing for clean URLs (e.g., /servicos instead of /#/servicos)
+// This improves SEO and indexability for SPAs deployed as static files.
+// Note: Server must be configured to rewrite all requests to /index.html (see DEPLOYMENT.md)
 function AppRouter() {
   return (
-    <Router hook={useHashLocation}>
+    <Router>
       <Switch>
         <Route path="/" component={Home} />
         <Route component={NotFound} />
