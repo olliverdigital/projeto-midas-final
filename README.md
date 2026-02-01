@@ -53,7 +53,7 @@ Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
 
 ```env
 # Obrigatórias
-VITE_WHATSAPP_NUMBER=5585988154220
+VITE_WHATSAPP_NUMBER=5534998099418
 VITE_CONTACT_EMAIL=contato@midas.com.br
 
 # Opcionais
@@ -225,6 +225,9 @@ Para que as rotas funcionem corretamente em produção, adicione:
 - ✅ Axios configurado com interceptors
 - ✅ ESLint atualizado para flat config
 - ✅ SEO: robots.txt e sitemap.xml
+- ✅ **SEO Avançado**: Schema Markup (JSON-LD) para LocalBusiness e Service
+- ✅ **GEO Ready**: Estrutura otimizada para IAs (ChatGPT/Gemini)
+- ✅ **Dynamic Meta**: Gerenciamento de tags via React Helmet Async
 - ✅ Documentação de deployment
 
 ---
@@ -266,7 +269,7 @@ Este projeto é propriedade da MIDAS Locações & Serviços Ltda.
 ## 📞 Contato
 
 - **Website**: [Em breve]
-- **WhatsApp**: (85) 98815-4220
+- **WhatsApp**: (34) 99809-9418
 - **Email**: contato@midas.com.br
 - **Localização**: Rio Paranaíba - MG
 

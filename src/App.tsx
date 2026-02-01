@@ -4,6 +4,8 @@ import { PhoneCall, Loader2 } from 'lucide-react'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Toaster } from '@/components/ui/sonner'
+import { SEOHead } from '@/components/seo/SEOHead'
+import { SchemaMarkup } from '@/components/seo/SchemaMarkup'
 
 // Lazy load all pages for better performance
 const Home = lazy(() => import('@/pages/Home'))
@@ -28,6 +30,8 @@ const PageLoader = () => (
 export default function App() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans">
+      <SEOHead />
+      <SchemaMarkup />
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-background px-4 py-2 border rounded-md z-[100]">Pular para o conteúdo principal</a>
       <Header />
 
@@ -50,7 +54,7 @@ export default function App() {
       <Toaster />
 
       <a
-        href={`https://wa.me/5585988154220`}
+        href={`https://wa.me/5534998099418`}
         target="_blank"
         rel="noreferrer"
         className="fixed bottom-6 right-6 inline-flex items-center gap-2 rounded-full bg-green-600 text-white px-5 py-3 shadow-lg hover:bg-green-700 transition-all z-50 animate-in fade-in slide-in-from-bottom-4 font-bold border-2 border-white"
