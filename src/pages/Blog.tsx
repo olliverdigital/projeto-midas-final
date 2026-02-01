@@ -7,9 +7,10 @@ import industrialMaintenance from '@/assets/industrial-maintenance.jpg'
 import heroBg from '@/assets/hero-bg.jpg'
 import solarMaintenance from '@/assets/solar-maintenance.jpg'
 
-const posts = [
+export const posts = [
   {
     id: 1,
+    slug: "manutencao-preventiva-vs-corretiva",
     title: "Manutenção Preventiva vs Corretiva: Qual o melhor custo-benefício?",
     excerpt: "Entenda por que esperar o equipamento quebrar pode custar até 7x mais do que investir em planos de manutenção programada.",
     category: "Gestão de Manutenção",
@@ -19,6 +20,7 @@ const posts = [
   },
   {
     id: 2,
+    slug: "importancia-termografia-prevenir-incendios",
     title: "A importância da termografia na prevenção de incêndios elétricos",
     excerpt: "Saiba como a inspeção termográfica identifica pontos quentes invisíveis a olho nu e evita paradas críticas na sua planta.",
     category: "Manutenção Preditiva",
@@ -28,6 +30,7 @@ const posts = [
   },
   {
     id: 3,
+    slug: "sujeira-paineis-fotovoltaicos-reducao-geracao",
     title: "Energia Solar: Sujeira nos painéis reduz geração em até 25%",
     excerpt: "Estudos mostram o impacto da falta de limpeza técnica em usinas fotovoltaicas e como recuperar essa performance.",
     category: "Energia Solar",
@@ -77,7 +80,7 @@ export default function Blog() {
                   </div>
                 </div>
                 <CardTitle className="line-clamp-2 hover:text-brand-blue transition-colors">
-                  <Link to="#">{post.title}</Link>
+                  <Link to={`/blog/${post.slug}`}>{post.title}</Link>
                 </CardTitle>
               </CardHeader>
               <CardContent>
