@@ -15,6 +15,7 @@ const Blog = lazy(() => import('@/pages/Blog'))
 const Servicos = lazy(() => import('@/pages/Servicos'))
 const ServiceDetail = lazy(() => import('@/pages/ServiceDetail'))
 const Emergencia = lazy(() => import('@/pages/Emergencia'))
+const BlogPost = lazy(() => import('@/pages/BlogPost'))
 const NotFound = lazy(() => import('@/pages/NotFound'))
 
 // Loading fallback component
@@ -45,6 +46,7 @@ export default function App() {
             <Route path="/emergencia" element={<Emergencia />} />
             <Route path="/contato" element={<Contato />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

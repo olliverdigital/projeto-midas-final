@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
-import { CheckCircle2, Loader2, Send, AlertCircle, PhoneCall } from 'lucide-react'
+import { CheckCircle2, Loader2, Send, PhoneCall } from 'lucide-react'
 
 const contactFormSchema = z.object({
   name: z.string().min(3, 'Nome deve ter pelo menos 3 caracteres').max(100, 'Nome muito longo'),
@@ -21,7 +21,6 @@ type ContactFormData = z.infer<typeof contactFormSchema>
 
 export function ContactForm() {
   const [isSuccess, setIsSuccess] = useState(false)
-  const [submitError, setSubmitError] = useState<string | null>(null)
 
   const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '5534998099418'
 
@@ -72,17 +71,6 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      {submitError && (
-        <div className="bg-amber-900/20 border border-amber-900/50 p-4 rounded-md">
-          <div className="flex items-start gap-3 mb-3">
-            <AlertCircle className="h-5 w-5 text-amber-500 mt-0.5" />
-            <p className="text-sm text-amber-200">{submitError}</p>
-          </div>
-          <Button type="button" onClick={handleWhatsAppFallback} className="w-full bg-green-600 hover:bg-green-700 text-white font-bold">
-            <PhoneCall className="mr-2 h-4 w-4" /> ENVIAR DADOS PELO WHATSAPP
-          </Button>
-        </div>
-      )}
 
       <div className="space-y-4">
         <div className="grid sm:grid-cols-2 gap-4">
