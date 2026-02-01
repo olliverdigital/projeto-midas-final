@@ -78,30 +78,13 @@ export default function ServiceDetail() {
             <div className="bg-white border shadow-lg rounded-xl p-6 sticky top-24">
               <h3 className="text-xl font-bold mb-4">Solicite uma Cotação</h3>
               <p className="text-sm text-muted-foreground mb-6">
-                Interessado em {service.title}? Preencha o formulário e fale com um especialista.
+                Interessado em {service.title}? Fale diretamente com um especialista agora mesmo.
               </p>
-              <Button asChild className="w-full bg-green-600 hover:bg-green-700 mb-6">
+              <Button asChild className="w-full bg-green-600 hover:bg-green-700 h-12 text-md font-bold">
                 <a href={`https://wa.me/5534998099418?text=Olá, gostaria de saber mais sobre ${service.title}`} target="_blank" rel="noreferrer">
-                  <PhoneCall className="mr-2 h-4 w-4" /> Conversar no WhatsApp
+                  <PhoneCall className="mr-2 h-5 w-5" /> Falar no WhatsApp
                 </a>
               </Button>
-              <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                  <span className="w-full border-t" />
-                </div>
-                <div className="relative flex justify-center text-xs uppercase">
-                  <span className="bg-white px-2 text-muted-foreground">Ou preencha</span>
-                </div>
-              </div>
-              <div className="mt-6">
-                {/* Simplified form for sidebar if needed, or link to contact. Using full form for now but could be compact */}
-                <div className="text-center">
-                  <p className="mb-4 font-medium">Prefere e-mail?</p>
-                  <Button asChild variant="outline" className="w-full">
-                    <Link to="/contato">Ir para Formulário Completo</Link>
-                  </Button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
