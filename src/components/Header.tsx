@@ -22,7 +22,7 @@ export function Header() {
   const isActive = (path: string) => location.pathname === path
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200/20 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white">
       <div className="container flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group" aria-label="MIDAS Home">
           <div className="relative flex items-center justify-center w-12 h-12 overflow-hidden group-hover:scale-105 transition-transform">
