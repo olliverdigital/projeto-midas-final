@@ -14,7 +14,7 @@ export const posts = [
     title: "Manutenção Preventiva vs Corretiva: Qual o melhor custo-benefício?",
     excerpt: "Entenda por que esperar o equipamento quebrar pode custar até 7x mais do que investir em planos de manutenção programada.",
     category: "Gestão de Manutenção",
-    date: "12 Mar 2024",
+    date: "12 Out 2025",
     author: "Téc. Luiz Lima",
     image: industrialMaintenance
   },
@@ -24,7 +24,7 @@ export const posts = [
     title: "A importância da termografia na prevenção de incêndios elétricos",
     excerpt: "Saiba como a inspeção termográfica identifica pontos quentes invisíveis a olho nu e evita paradas críticas na sua planta.",
     category: "Manutenção Preditiva",
-    date: "05 Mar 2024",
+    date: "05 Mar 2025",
     author: "Téc. Luiz Lima",
     image: heroBg
   },
@@ -34,7 +34,7 @@ export const posts = [
     title: "Energia Solar: Sujeira nos painéis reduz geração em até 25%",
     excerpt: "Estudos mostram o impacto da falta de limpeza técnica em usinas fotovoltaicas e como recuperar essa performance.",
     category: "Energia Solar",
-    date: "28 Fev 2024",
+    date: "28 Jan 2026",
     author: "Téc. Luiz Lima",
     image: solarMaintenance
   }

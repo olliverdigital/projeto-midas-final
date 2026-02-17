@@ -3,7 +3,7 @@ import { ContactForm } from '@/components/ContactForm'
 import { SEO } from '@/components/SEO'
 
 export default function Contato() {
-  const googleMapsUrl = "https://www.google.com/maps/place/Midas+Loca%C3%A7%C3%B5es+e+Servi%C3%A7os+Ltda/@-19.2020676,-46.2341693,17z/data=!3m1!4b1!4m6!3m5!1s0x94b1fff3ce75c225:0x8a8a4c0376e34e61!8m2!3d-19.2020676!4d-46.2341693!16s%2Fg%2F11y4vj0w2v?entry=ttu";
+  const _googleMapsUrl = "https://www.google.com/maps/place/Midas+Loca%C3%A7%C3%B5es+e+Servi%C3%A7os+Ltda/@-19.2020676,-46.2341693,17z/data=!3m1!4b1!4m6!3m5!1s0x94b1fff3ce75c225:0x8a8a4c0376e34e61!8m2!3d-19.2020676!4d-46.2341693!16s%2Fg%2F11y4vj0w2v?entry=ttu";
 
   return (
     <div className="flex flex-col min-h-screen">
