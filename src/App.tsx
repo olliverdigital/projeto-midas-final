@@ -1,11 +1,13 @@
 import { Route, Routes } from 'react-router-dom'
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useState } from 'react'
 import { PhoneCall, Loader2 } from 'lucide-react'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Toaster } from '@/components/ui/sonner'
 import { SEOHead } from '@/components/seo/SEOHead'
 import { SchemaMarkup } from '@/components/seo/SchemaMarkup'
+import { CookieConsent } from '@/components/CookieConsent'
+import { CookiePreferencesModal } from '@/components/CookiePreferencesModal'
 
 // Lazy load all pages for better performance
 const Home = lazy(() => import('@/pages/Home'))
@@ -18,6 +20,7 @@ const Emergencia = lazy(() => import('@/pages/Emergencia'))
 const BlogPost = lazy(() => import('@/pages/BlogPost'))
 const PrivacyPolicy = lazy(() => import('@/pages/PrivacyPolicy'))
 const TermsOfUse = lazy(() => import('@/pages/TermsOfUse'))
+const CookiePolicy = lazy(() => import('@/pages/CookiePolicy'))
 const NotFound = lazy(() => import('@/pages/NotFound'))
 
 // Loading fallback component
@@ -31,6 +34,8 @@ const PageLoader = () => (
 )
 
 export default function App() {
+  const [isPreferencesOpen, setIsPreferencesOpen] = useState(false)
+
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans">
       <SEOHead />
@@ -51,6 +56,7 @@ export default function App() {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/privacidade" element={<PrivacyPolicy />} />
             <Route path="/termos" element={<TermsOfUse />} />
+            <Route path="/cookies" element={<CookiePolicy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
@@ -58,6 +64,15 @@ export default function App() {
 
       <Footer />
       <Toaster />
+
+      {/* Cookie Consent Banner */}
+      <CookieConsent onOpenPreferences={() => setIsPreferencesOpen(true)} />
+
+      {/* Cookie Preferences Modal */}
+      <CookiePreferencesModal
+        isOpen={isPreferencesOpen}
+        onClose={() => setIsPreferencesOpen(false)}
+      />
 
       <a
         href={`https://wa.me/5534998099418`}

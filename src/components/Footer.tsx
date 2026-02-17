@@ -130,6 +130,9 @@ export function Footer() {
             <Link to="/privacidade" className="hover:text-secondary transition-colors">
               POLÍTICA DE PRIVACIDADE
             </Link>
+            <Link to="/cookies" className="hover:text-secondary transition-colors">
+              COOKIES
+            </Link>
             <Link to="/termos" className="hover:text-secondary transition-colors">
               TERMOS DE USO
             </Link>
