@@ -77,7 +77,7 @@ export default function Contato() {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg">Horário de Atendimento</h3>
-                    <p className="text-muted-foreground text-sm">Segunda a Sexta: 07h às 17h</p>
+                    <p className="text-muted-foreground text-sm">Segunda a Sexta: 08h às 17h</p>
                     <span className="inline-block mt-2 px-3 py-1 bg-red-50 text-red-600 text-xs font-bold rounded-full uppercase tracking-wider">
                       Plantão 24h para Emergências
                     </span>
