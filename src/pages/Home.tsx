@@ -345,7 +345,7 @@ export default function Home() {
                 EVITE O PRÓXIMO <span className="text-red-500">DOWNTIME</span>.
               </h2>
               <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
-                Não espere a falha acontecer. Solicite uma avaliação técnica gratuita hoje mesmo.
+                Não espere a falha acontecer. Solicite uma avaliação técnica hoje mesmo.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -356,7 +356,7 @@ export default function Home() {
                 </Button>
                 <Button asChild variant="outline" size="lg" className="border-slate-700 text-white hover:bg-white hover:text-slate-950 font-medium h-14 px-10 rounded-none bg-transparent">
                   <Link to="/contato">
-                    Solicitar Orçamento via E-mail
+                    Solicitar Orçamento
                   </Link>
                 </Button>
               </div>

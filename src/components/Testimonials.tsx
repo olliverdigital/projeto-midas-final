@@ -1,45 +1,76 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Star } from "lucide-react"
+import allmecAvatar from "@/assets/Allmec-solucao-em-montagens.jpeg"
+import fazendaSucupiraAvatar from "@/assets/fazenda-sucupira.jpeg"
+import triadeEngenhariaAvatar from "@/assets/marcos-dutra-triade-engenharia.jpeg"
 
 interface Testimonial {
     id: string
     name: string
-    profession: string
+    profession: React.ReactNode
     rating: number
     description: string
-    avatarUrl: string
+    avatarUrl: string | any
 }
 
 const TESTIMONIALS: Testimonial[] = [
     {
+
         id: "testimonial-1",
-        name: "Carlos Mendes",
-        profession: "Gerente de Manutenção Industrial",
+
+        name: "Alexandre Fontenele",
+
+        // Usando JSX para incluir o link
+
+        profession: (
+
+            <>
+                Diretor da{" "}
+                <a
+                    href="https://www.allmecservicos.com.br"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-secondary hover:underline transition-all"
+                >
+                    Allmec
+                </a>
+            </>
+        ),
         rating: 5,
-        description:
-            "A MIDAS transformou nossa operação. A manutenção preditiva evitou paradas não planejadas que nos custariam milhares. Equipe altamente técnica e profissional.",
-        avatarUrl:
-            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=60",
+        description: "A Midas Locações e Serviços, realizou a manutenção das nossas máquinas de solda, equipamentos elétricos e inversores com muita competência e agilidade. Serviço eficaz, bem executado e dentro do prazo. Recomendo!",
+        avatarUrl: allmecAvatar,
+
     },
     {
         id: "testimonial-2",
-        name: "Ana Paula Silva",
-        profession: "Engenheira de Energia",
+        name: "Rosanne Thaís Lopes",
+        profession: "Gerente da Fazenda Sucupira",
         rating: 5,
         description:
-            "Excelente trabalho na manutenção da nossa usina solar. A análise de performance identificou problemas que estavam reduzindo nossa geração em 15%. Recomendo fortemente.",
-        avatarUrl:
-            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop&q=60",
+            "Agradecemos pelo excelente serviço prestado no inversor de energia solar. A dedicação, profissionalismo e atenção foram fundamentais e ficamos muito satisfeitos com o resultado e certamente recomendamos seus serviços.",
+        avatarUrl: fazendaSucupiraAvatar,
     },
     {
         id: "testimonial-3",
-        name: "Roberto Almeida",
-        profession: "Diretor de Operações",
+        name: "Marcos Dutra",
+        profession: (
+
+            <>
+                Gerente da{" "}
+                <a
+                    href="https://www.triadeengenharia.eng.br"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-secondary hover:underline transition-all"
+                >
+                    Tríade Engenharia
+                </a>
+            </>
+        ),
         rating: 5,
         description:
-            "Profissionalismo e precisão técnica. Os laudos NR10 foram entregues no prazo e com qualidade impecável. A equipe demonstra profundo conhecimento normativo.",
-        avatarUrl:
-            "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=60",
+            "Fiquei extremamente satisfeito com o atendimento da Midas Locações e Serviços. O serviço de manutenção foi realizado com rapidez e eficiência. A equipe demonstrou grande conhecimento técnico e profissionalismo. Recomendo sem dúvidas pela confiança e excelência no trabalho.",
+        avatarUrl: triadeEngenhariaAvatar,
     },
     {
         id: "testimonial-4",
