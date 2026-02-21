@@ -83,7 +83,7 @@ export default function ServiceDetail() {
             </div>
 
             <div className="bg-blue-50 border border-blue-100 p-8 rounded-xl">
-              <h2 className="text-xl font-bold text-brand-blue mb-4">Normas Técnicas</h2>
+              <h3 className="text-xl font-bold text-brand-blue mb-4">Normas Técnicas</h3>
               <p className="text-slate-700">
                 Todos os nossos procedimentos seguem rigorosamente as normas NR10, NBR 5410, NBR 5419 e demais regulamentações aplicáveis ao setor.
               </p>
@@ -92,7 +92,7 @@ export default function ServiceDetail() {
 
           <div className="lg:col-span-1">
             <div className="bg-white border shadow-lg rounded-xl p-6 sticky top-24">
-              <h2 className="text-xl font-bold mb-4">Solicite uma Cotação</h2>
+              <h3 className="text-xl font-bold mb-4">Solicite uma Cotação</h3>
               <p className="text-sm text-muted-foreground mb-6">
                 Interessado em {service.title}? Fale diretamente com um especialista agora mesmo.
               </p>

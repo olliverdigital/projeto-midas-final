@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, PhoneCall } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+// Adicionei SheetHeader, SheetTitle e SheetDescription aqui:
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger } from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
 import logoImg from '@/assets/logo.png'
 
@@ -63,11 +64,22 @@ export function Header() {
         {/* Mobile Navigation */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" aria-label="Menu" className="rounded-none hover:bg-secondary/10 hover:text-secondary">
+            {/* O aviso de "forwardRef" pode vir deste Button. Se persistir, precisaremos ver o button.tsx */}
+            <Button variant="ghost" size="icon" aria-label="Abrir Menu" className="rounded-none hover:bg-secondary/10 hover:text-secondary">
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
+
           <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l-secondary bg-background/95 backdrop-blur-xl">
+
+            {/* RESOLUÇÃO DOS ERROS DE CONSOLE: */}
+            <SheetHeader className="text-left">
+              <SheetTitle className="text-slate-900 font-black">Menu de Navegação</SheetTitle>
+              <SheetDescription>
+                Acesse as áreas de serviços e contato da MIDAS.
+              </SheetDescription>
+            </SheetHeader>
+
             <div className="flex flex-col gap-6 mt-6">
               <Link to="/" className="flex items-center gap-2 mb-8 border-b border-slate-200 pb-4" onClick={() => setIsOpen(false)}>
                 <div className="flex items-center justify-center w-12 h-12 overflow-hidden">
@@ -78,6 +90,7 @@ export function Header() {
                   <span className="text-[0.6rem] font-mono text-slate-500 uppercase">SYSTEM MENU</span>
                 </div>
               </Link>
+
               <nav className="flex flex-col gap-2">
                 {navigation.map((item) => (
                   <Link
@@ -94,6 +107,7 @@ export function Header() {
                   </Link>
                 ))}
               </nav>
+
               <div className="mt-8 border-t border-slate-200 pt-6">
                 <Button asChild className="w-full bg-secondary text-white font-bold rounded-none h-12" size="lg">
                   <a href="https://wa.me/5534998099418" target="_blank" rel="noreferrer">

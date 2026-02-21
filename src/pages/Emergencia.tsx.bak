@@ -49,26 +49,26 @@ export default function Emergencia() {
           </div>
 
           <div className="bg-slate-50 p-8 rounded-xl border">
-            <h2 className="text-2xl font-bold mb-6">Nosso Compromisso</h2>
+            <h3 className="text-2xl font-bold mb-6">Nosso Compromisso</h3>
             <div className="space-y-6">
               <div className="flex gap-4">
                 <Clock className="h-8 w-8 text-brand-blue shrink-0" />
                 <div>
-                  <h3 className="font-bold text-lg">Resposta Rápida</h3>
+                  <h4 className="font-bold text-lg">Resposta Rápida</h4>
                   <p className="text-muted-foreground">Tempo de mobilização otimizado para a região de Rio Paranaíba e entorno.</p>
                 </div>
               </div>
               <div className="flex gap-4">
                 <CheckCircle2 className="h-8 w-8 text-brand-blue shrink-0" />
                 <div>
-                  <h3 className="font-bold text-lg">Diagnóstico Preciso</h3>
+                  <h4 className="font-bold text-lg">Diagnóstico Preciso</h4>
                   <p className="text-muted-foreground">Equipe equipada com termovisores e analisadores de energia para identificar a raiz do problema.</p>
                 </div>
               </div>
               <div className="flex gap-4">
                 <ShieldAlert className="h-8 w-8 text-brand-blue shrink-0" />
                 <div>
-                  <h3 className="font-bold text-lg">Segurança Total</h3>
+                  <h4 className="font-bold text-lg">Segurança Total</h4>
                   <p className="text-muted-foreground">Mesmo na emergência, seguimos rigorosamente os protocolos da NR10.</p>
                 </div>
               </div>

@@ -54,9 +54,9 @@ export default function Sobre() {
             </p>
 
             <div className="pt-6 border-t border-slate-800 space-y-6">
-              <h2 className="text-2xl md:text-3xl font-semibold text-white">
+              <h3 className="text-2xl md:text-3xl font-semibold text-white">
                 Especialização em Eletrônica de Alta Potência e Energia Solar
-              </h2>
+              </h3>
 
               <p className="text-lg md:text-xl leading-relaxed">
                 Com o avanço da geração distribuída no Brasil, a Midas
